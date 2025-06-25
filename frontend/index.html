@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qitchen</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="blocks/site-header/site-header.css">
+    <link rel="stylesheet" href="blocks/overlay-menu/overlay-menu.css">
+</head>
+<body>
+    <div id="app-root"></div>
+
+    <div class="overlay-menu" id="overlayMenu">
+        <button class="overlay-menu__close-btn" aria-label="Cerrar menú">&times;</button>
+        <nav class="overlay-menu__container">
+            <a href="#/menu" class="overlay-menu__link" data-link>MENU</a>
+            <a href="#/booktable" class="overlay-menu__link" data-link>RESERVATION</a>
+            <a href="#/about" class="overlay-menu__link" data-link>ABOUT</a>
+            <a href="#/contact" class="overlay-menu__link" data-link>CONTACT</a>
+            <a href="#/blog" class="overlay-menu__link" data-link>BLOG</a>
+        </nav>
+    </div>
+
+    <script type="module" src="blocks/site-header/site-header.js"></script>
+    <script type="module" src="router.js"></script>
+</body>
+</html>
