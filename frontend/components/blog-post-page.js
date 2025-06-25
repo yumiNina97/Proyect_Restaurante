@@ -6,7 +6,7 @@ blogPostPageTemplate.innerHTML = `
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/main-blogpage.png');
+            background-image: url('./assets/images/main-blogpage.webp');
         }
         .layout-split__sidebar {
             padding: 60px 40px;
