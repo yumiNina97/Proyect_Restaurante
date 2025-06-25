@@ -1,0 +1,44 @@
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    color: #a0a0a0;
+}
+
+.menu-item__image {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item__details {
+    flex-grow: 1;
+}
+
+.menu-item__name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: white;
+    margin: 0 0 5px 0;
+    font-weight: lighter;
+}
+
+.menu-item__icon {
+    height: 16px;
+}
+
+.menu-item__description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.menu-item__price {
+    font-size: 1rem;
+    color: #EFE7D2;
+    font-weight: normal;
+}

@@ -1,0 +1,41 @@
+.contact-details {
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.contact-details__title {
+    color: #a0a0a0;
+    letter-spacing: 2px;
+    margin: 0 0 30px 0;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.contact-details__item {
+    margin-bottom: 15px;
+    color: #EFE7D2;
+    font-weight: lighter;
+}
+
+.contact-details__label {
+    display: block;
+    font-size: 0.7rem;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.contact-details__value {
+    display: block;
+    font-size: 0.9rem;
+    text-align: end;
+}
+
+.contact-details__social-icons {
+    text-align: end;
+}
+.social-links__link {
+    margin-right: 10px;
+}

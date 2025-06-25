@@ -1,0 +1,29 @@
+.menu-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+.menu-filters__button {
+    background: black;
+    border: 1px solid #EFE7D2;
+    color: #a0a0a0;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.6rem;
+}
+
+.menu-filters__button:hover {
+    border-color: white;
+    color: white;
+}
+
+.menu-filters__button--active {
+    background-color: white;
+    color: black;
+    border-color: white;
+    font-weight: lighter;
+}
