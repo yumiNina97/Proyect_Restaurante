@@ -1,0 +1,22 @@
+.page-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px; 
+    height: 100vh; 
+}
+
+.page-layout__main-content {
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    overflow: hidden;
+    padding: 10px;
+}
+
+.page-layout__sidebar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 29px;
+    display: flex;
+    flex-direction: column;
+}
