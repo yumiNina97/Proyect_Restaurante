@@ -70,7 +70,7 @@ Middleware de autenticación con JWT (`authMiddleware.js`).
 
 - **Backend**: Node.js, Express, PostgreSQL, Prisma, JWT, Bcrypt
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript, Web Components
-- **Herramientas**: Git, npm, Nodemon, Live Server
+- **Herramientas**: Git, npm, Nodemom.
 
 ---
 
