@@ -1,0 +1,23 @@
+.story-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding-top: 2%;
+}
+.story-panel__image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+.story-panel__title {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.story-panel__text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #a0a0a0;
+}

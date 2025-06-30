@@ -1,0 +1,132 @@
+{
+    "categorias": [
+        {
+            "nombre": "MAKI",
+            "items": [
+                {
+                    "nombre": "SPICY TUNA MAKI",
+                    "descripcion": "A tantalizing blend of spicy tuna, cucumber, and avocado, harmoniously rolled in nori and seasoned rice.",
+                    "precio": "9",
+                    "imagen": "assets/images/menu/menu-spicy-tuna.png",
+                    "icono": "assets/icons/leaf.svg"
+                },
+                {
+                    "nombre": "MANGO MAKI",
+                    "descripcion": "Tempura-fried shrimp, cucumber, and cream cheese embrace a center of fresh avocado, delivering a satisfying contrast of textures.",
+                    "precio": "9",
+                    "imagen": "assets/images/menu/menu-mango-maki.png",
+                    "icono": null
+                },
+                {
+                    "nombre": "SALMON MAKI",
+                    "descripcion": "Shiitake mushrooms, avocado, and pickled daikon radish nestle within a roll of seasoned rice, coated with nutty sesame seeds.",
+                    "precio": "9",
+                    "imagen": "assets/images/menu/menu-salmon-maki.png",
+                    "icono": null
+                },
+                {
+                    "nombre": "TUNA MAKI",
+                    "descripcion": "A vibrant assortment of julienned carrots, bell peppers, and cucumber, tightly encased in a nori-wrapped rice roll.",
+                    "precio": "5",
+                    "imagen": "assets/images/menu/menu-tuna-maki.png",
+                    "icono": null
+                }
+
+            ]
+        },
+        {
+            "nombre": "URAMAKI",
+            "items": [
+                {
+                    "nombre": "VOLCANO DELIGHT",
+                    "descripcion": "Creamy crab salad, avocado, and cucumber rolled inside, topped with spicy tuna and drizzled with fiery sriracha sauce.",
+                    "precio": "12",
+                    "imagen": "assets/images/menu/menu-volcano-delight.png",
+                    "icono": "assets/icons/leaf.svg"
+                },
+                {
+                    "nombre": "RAINBOW FUSION",
+                    "descripcion": "A colorful blend of fresh tuna, salmon, yellowtail, and avocado, enveloping a core of cucumber and crab stick.",
+                    "precio": "12",
+                    "imagen": "assets/images/menu/menu-rainbow-fusion.png",
+                    "icono": null
+                },
+                {
+                    "nombre": "DRAGON ELEGANCE",
+                    "descripcion": "Grilled eel and avocado nestled within the roll, draped with slices of ripe avocado resembling dragon scales.",
+                    "precio": "12",
+                    "imagen": "assets/images/menu/menu-dragon-elegance.png",
+                    "icono": null
+                },
+                {
+                    "nombre": "SUNSET SERENITY",
+                    "descripcion": "Tempura shrimp, cucumber, and spicy mayo embraced by a roll of soy paper, crowned with slices of creamy mango.",
+                    "precio": "12",
+                    "imagen": "assets/images/menu/menu-sunset-serenity.png",
+                    "icono": null
+                },
+                {
+                    "nombre": "MYSTIC GARDEN",
+                    "descripcion": "Shiitake mushrooms, asparagus, and cucumber intermingle with crispy tempura bits, blanketed by a layer of sesame seeds.",
+                    "precio": "12",
+                    "imagen": "assets/images/menu/menu-mystic-garden.png",
+                    "icono": null
+                },
+                {
+                    "nombre": "OCEAN BREEZE",
+                    "descripcion": "A medley of fresh shrimp, crab stick, and avocado, laced with a gentle touch of zesty yuzu-infused tobiko.",
+                    "precio": "12",
+                    "imagen": "assets/images/menu/menu-ocean-breeze.png", 
+                    "icono": null
+                },
+                {
+                    "nombre": "TOKYO BLOSSOM",
+                    "descripcion": "Delicate pink soy paper envelopes a blend of tuna, crab stick, and cucumber, embellished with edible flower petals.",
+                    "precio": "12",
+                    "imagen": "assets/images/menu/menu-tokyo-blossom.png", 
+                    "icono": null
+                }
+            ]
+        },
+        {
+            "nombre": "SPECIAL ROLLS",
+            "items": [
+                {
+                    "nombre": "SUNRISE BLISS",
+                    "descripcion": "A delicate combination of fresh salmon, cream cheese, and asparagus, rolled in orange-hued tobiko for a burst of sunrise-inspired flavors.",
+                    "precio": "16",
+                    "imagen": "assets/images/menu/menu-sunrise-bliss.png",
+                    "icono": "assets/icons/leaf.svg"
+                },
+                {
+                    "nombre": "MANGO TANGO FUSION",
+                    "descripcion": "Tempura shrimp, cucumber, and avocado dance alongside sweet mango slices, drizzled with a tangy mango sauce.",
+                    "precio": "16",
+                    "imagen": "assets/images/menu/menu-mango-tango-fusion.png",
+                    "icono": "assets/icons/leaf.svg"
+                },
+                {
+                    "nombre": "TRUFFLE INDULGENCE",
+                    "descripcion": "Decadent slices of black truffle grace a roll of succulent wagyu beef, cucumber, and microgreens, culminating in an exquisite umami symphony.",
+                    "precio": "16",
+                    "imagen": "assets/images/menu/menu-truffle-indulgence.png",
+                    "icono": "assets/icons/leaf.svg"
+                },
+                {
+                    "nombre": "PACIFIC FIRECRACKER",
+                    "descripcion": "Spicy crab salad, tempura shrimp, and jalapeño peppers combine in a fiery ensemble, accented with a chili-infused aioli.",
+                    "precio": "16",
+                    "imagen": "assets/images/menu/menu-pacific-firecracker.png",
+                    "icono": "assets/icons/leaf.svg"
+                },
+                {
+                    "nombre": "ETERNAL EEL ENCHANTMENT",
+                    "descripcion": "An enchanting blend of eel tempura, foie gras, and cucumber, elegantly layered with truffle oil and gold leaf for a touch of opulence.",
+                    "precio": "16",
+                    "imagen": "assets/images/menu/menu-eternal-eel-enchantment.png",
+                    "icono": "assets/icons/leaf.svg"
+                }
+            ]
+        }
+    ]
+}

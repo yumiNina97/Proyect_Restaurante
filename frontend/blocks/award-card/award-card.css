@@ -1,0 +1,20 @@
+.award-card {
+    text-align: center;
+}
+.award-card__stars {
+    color: #E74C3C; 
+    font-size: 1rem;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+.award-card__title {
+    font-size: 0.9rem;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+}
+.award-card__subtitle {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+}

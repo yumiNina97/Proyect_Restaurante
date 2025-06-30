@@ -1,0 +1,52 @@
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.overlay-menu--visible {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.overlay-menu__container {
+    text-align: center;
+}
+
+.overlay-menu__link {
+    display: block;
+    color: #a0a0a0;
+    font-size: 2.5rem;
+    font-weight: lighter;
+    text-decoration: none;
+    font-family: 'Times New Roman', serif;
+    padding: 15px;
+
+}
+
+.overlay-menu__link:hover {
+    color: white;
+
+}
+
+.overlay-menu__close-btn {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    font-size: 3rem;
+    font-weight: lighter;
+    cursor: pointer;
+}

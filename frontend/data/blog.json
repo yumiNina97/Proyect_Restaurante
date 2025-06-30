@@ -1,0 +1,42 @@
+[
+    {
+      "titulo": "HOW QITCHEN REDEFINES FLAVOR HARMONY IN EVERY BITE",
+      "resumen": "Experience an orchestra of tastes as Qitchen's sushi unveils a symphony of perfectly balanced flavors.",
+      "contenido_completo": "El contenido detallado de este artículo iría aquí...",
+      "imagen_url": "./assets/images/blog-post1.png",
+      "autor": "Author Name",
+      "fecha_publicacion": "2023-08-24T12:00:00.000Z"
+    },
+    {
+      "titulo": "UNVEILING THE MASTERY BEHIND OUR CULINARY CRAFTSMANSHIP",
+      "resumen": "Explore the meticulous artistry and dedication that create Qitchen's renowned sushi perfection.",
+      "contenido_completo": "El contenido detallado de este artículo iría aquí...",
+      "imagen_url": "./assets/images/blog-post2.png",
+      "autor": "Author Name",
+      "fecha_publicacion": "2023-08-24T11:00:00.000Z"
+    },
+    {
+      "titulo": "JOURNEY THROUGH FRESHNESS EXQUISITE SUSHI SELECTION",
+      "resumen": "Embark on a seafood adventure, guided by Qitchen's fresh and exquisite sushi creations from the sea.",
+      "contenido_completo": "El contenido detallado de este artículo iría aquí...",
+      "imagen_url": "./assets/images/blog-post3.png",
+      "autor": "Author Name",
+      "fecha_publicacion": "2023-08-24T10:00:00.000Z"
+    },
+    {
+      "titulo": "PALATE WITH QITCHEN'S UNSURPASSED SUSHI DELICACIES",
+      "resumen": "Discover the heights of gastronomic delight as Qitchen's sushi transports you to a new culinary realm.",
+      "contenido_completo": "El contenido detallado de este artículo iría aquí...",
+      "imagen_url": "./assets/images/blog-post4.png",
+      "autor": "Author Name",
+      "fecha_publicacion": "2023-08-24T09:00:00.000Z"
+    },
+    {
+      "titulo": "THE QITCHEN EXPERIENCE BEYOND SUSHI",
+      "resumen": "Immerse in Qitchen's passion for culinary excellence, where sushi is more than a dish—it's an experience.",
+      "contenido_completo": "El contenido detallado de este artículo iría aquí...",
+      "imagen_url": "./assets/images/blog-post5.png",
+      "autor": "Author Name",
+      "fecha_publicacion": "2023-08-24T08:00:00.000Z"
+    }
+  ]

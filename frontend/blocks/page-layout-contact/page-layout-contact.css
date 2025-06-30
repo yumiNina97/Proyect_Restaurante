@@ -1,0 +1,75 @@
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    height: 100vh;
+}
+
+.page-layout--contact {
+    grid-template-columns: 1fr 1fr;
+}
+
+.page-layout__main-content {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-layout--contact .page-layout__main-content {
+    background-image: url('../../assets/images/main-contacto.png');
+}
+
+.page-layout__title {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+    font-size: 7rem;
+    line-height: 1.1;
+    margin: 0;
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+}
+
+.page-layout__sidebar {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr; 
+    gap: 30px;
+    color: white;
+    overflow-y: auto;
+}
+
+@media (max-width: 900px) {
+    .page-layout--contact {
+        grid-template-columns: 1fr;
+    }
+
+    .page-layout--contact .page-layout__main-content {
+        height: 50vh;
+    }
+
+    .page-layout__title {
+        font-size: 4rem;
+        left: 30px;
+        bottom: 30px;
+    }
+
+    .page-layout__sidebar {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-layout__title {
+        font-size: 3.5rem;
+    }
+    .page-layout__sidebar {
+        padding: 20px;
+        gap: 20px;
+    }
+}

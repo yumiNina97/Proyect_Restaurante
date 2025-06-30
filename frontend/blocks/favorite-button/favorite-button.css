@@ -1,0 +1,24 @@
+.favorite-button {
+    position: absolute;
+    padding: 12%;
+    top: 10px;
+    left: 10px;
+    width: 22%;
+    height: 22%;
+    background-color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite-button:hover {
+    background-color: black;
+    transform: scale(1.1);
+}
+
+.favorite-button__icon {
+    width: 18px;
+    height: 18px;
+}

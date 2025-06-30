@@ -1,0 +1,14 @@
+.about-top-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.about-top-section__image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
