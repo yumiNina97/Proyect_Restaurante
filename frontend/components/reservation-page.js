@@ -2,13 +2,13 @@ import { servicioAuth } from '../services/auth-service.js';
 
 const reservationPageTemplate = document.createElement('template');
 reservationPageTemplate.innerHTML = `
-    <link rel="stylesheet" href="blocks/layout-split/layout-split.css">
-    <link rel="stylesheet" href="blocks/site-header/site-header.css">
-    <link rel="stylesheet" href="blocks/reservation-form/reservation-form.css">
+    <link rel="stylesheet" href="../blocks/layout-split/layout-split.css">
+    <link rel="stylesheet" href="../blocks/site-header/site-header.css">
+    <link rel="stylesheet" href="../blocks/reservation-form/reservation-form.css">
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/Main-reservation.png');
+            background-image: url('../assets/images/Main-reservation.png');
         }
         .layout-split__sidebar {
             display: flex;
