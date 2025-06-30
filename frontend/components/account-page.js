@@ -8,7 +8,7 @@ accountPageTemplate.innerHTML = `
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/main-reservation.webp');
+            background-image: url('./assets/images/Main-reservation.png');
         }
         .layout-split__sidebar {
             display: flex;

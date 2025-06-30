@@ -7,7 +7,7 @@ blogPageTemplate.innerHTML = `
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/main-blog.webp');
+            background-image: url('./assets/images/Main-blog.png');
         }
         .layout-split__sidebar {
             padding: 60px 40px;
@@ -36,7 +36,7 @@ blogPageTemplate.innerHTML = `
 
                 <div class="blog-listing__posts">
                     <a href="#/blogpage" class="blog-post-summary" data-link>
-                        <img src="./assets/images/blog-post1.webp" class="blog-post-summary__image">
+                        <img src="./assets/images/blog-post1.png" class="blog-post-summary__image">
                         <div class="blog-post-summary__content">
                             <p class="blog-post-summary__date">24TH AUG 2023</p>
                             <h3 class="blog-post-summary__title">HOW QITCHEN REDEFINES FLAVOR HARMONY IN EVERY BITE</h3>
@@ -46,7 +46,7 @@ blogPageTemplate.innerHTML = `
                     </a>
 
                     <a href="#/blogpage" class="blog-post-summary" data-link>
-                        <img src="./assets/images/blog-post2.webp" class="blog-post-summary__image">
+                        <img src="./assets/images/blog-post2.png" class="blog-post-summary__image">
                         <div class="blog-post-summary__content">
                             <p class="blog-post-summary__date">24TH AUG 2023</p>
                             <h3 class="blog-post-summary__title">UNVEILING THE MASTERY BEHIND OUR CULINARY CRAFTSMANSHIP</h3>
@@ -56,7 +56,7 @@ blogPageTemplate.innerHTML = `
                     </a>
 
                     <a href="#/blogpage" class="blog-post-summary" data-link>
-                        <img src="./assets/images/blog-post3.webp" class="blog-post-summary__image">
+                        <img src="./assets/images/blog-post3.png" class="blog-post-summary__image">
                         <div class="blog-post-summary__content">
                             <p class="blog-post-summary__date">24TH AUG 2023</p>
                             <h3 class="blog-post-summary__title">JOURNEY THROUGH FRESHNESS EXQUSITE SUSHI SELECTION</h3>
@@ -65,7 +65,7 @@ blogPageTemplate.innerHTML = `
                         </div>
                     </a>
                     <a href="#/blogpage" class="blog-post-summary" data-link>
-                        <img src="./assets/images/blog-post4.webp" class="blog-post-summary__image">
+                        <img src="./assets/images/blog-post4.png" class="blog-post-summary__image">
                         <div class="blog-post-summary__content">
                             <p class="blog-post-summary__date">24TH AUG 2023</p>
                             <h3 class="blog-post-summary__title">PALATE WITH QITCHEN'S UNSURPASSED SUSHI DELICACIES</h3>
@@ -74,7 +74,7 @@ blogPageTemplate.innerHTML = `
                         </div>
                     </a>
                     <a href="#/blogpage" class="blog-post-summary" data-link>
-                        <img src="./assets/images/blog-post5.webp" class="blog-post-summary__image">
+                        <img src="./assets/images/blog-post5.png" class="blog-post-summary__image">
                         <div class="blog-post-summary__content">
                             <p class="blog-post-summary__date">24TH AUG 2023</p>
                             <h3 class="blog-post-summary__title">THE QITCHEN EXPERIENCE BEYOND SUSHI</h3>

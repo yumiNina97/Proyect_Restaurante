@@ -28,12 +28,12 @@ contactPageTemplate.innerHTML = `
         
         <div class="contact-gallery">
             <a href="#" class="contact-gallery__link">
-            <img src="assets/images/contact-gallery.webp" class="contact-gallery__image">
+            <img src="./assets/images/contact-gallery.png" class="contact-gallery__image">
         </a>
         </div>
 
         <div class="contact-map">
-            <img src="assets/images/contact-map.webp" class="contact-map__image">
+            <img src="./assets/images/contact-map.png" class="contact-map__image">
             <a href="#" class="contact-map__route-link">SHOW ROUTE →</a>
         </div>
 

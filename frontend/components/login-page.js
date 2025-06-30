@@ -4,7 +4,7 @@ loginPageTemplate.innerHTML = `
     <link rel="stylesheet" href="blocks/site-header/site-header.css">
     <link rel="stylesheet" href="blocks/login-form/login-form.css">
     <style>
-        .layout-split__main { background-image: url('./assets/images/main-reservation.webp'); }
+        .layout-split__main { background-image: url('./assets/images/Main-reservation.png'); }
         .layout-split__sidebar { 
         display: flex; 
         justify-content: center; 

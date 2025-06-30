@@ -10,7 +10,7 @@ aboutPageTemplate.innerHTML = `
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/main-about.webp');
+            background-image: url('./assets/images/main-about.png');
         }
         .layout-split__sidebar {
             padding-left: 10%;
@@ -31,7 +31,7 @@ aboutPageTemplate.innerHTML = `
                     <h2 class="about-intro__title">SUSHI ARTISTRY REDEFINED</h2>
                     <p class="about-intro__text">Where culinary craftsmanship meets modern elegance. Indulge in the finest sushi, expertly curated to elevate your dining experience.</p>
                 </section>
-                <img src="./assets/images/about-image-right.webp" class="about-top-section__image">
+                <img src="./assets/images/about-image-right.png" class="about-top-section__image">
             </div>
 
             <section class="awards-panel">
@@ -53,7 +53,7 @@ aboutPageTemplate.innerHTML = `
             </section>
 
             <section class="story-panel">
-                <img src="./assets/images/about-image-bottom.webp" class="story-panel__image">
+                <img src="./assets/images/about-image-bottom.png" class="story-panel__image">
                 <div class="story-panel__content">
                     <h2 class="story-panel__title">OUR STORY</h2>
                     <p class="story-panel__text">
