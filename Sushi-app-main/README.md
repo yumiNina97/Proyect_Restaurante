@@ -1,77 +1,93 @@
-# Sushi App
-> **Sushi App** es una aplicación full-stack para un restaurante de sushi: catálogo de productos, carrito de compras, blog, reservas y contacto.
+
+# 🍣 Qitchen - Aplicación Web para Restaurante de Sushi
+
+Bienvenido al repositorio de **Qitchen**, una aplicación web diseñada para gestionar un restaurante de sushi con una arquitectura moderna, enfocada en una experiencia de usuario fluida gracias a su estructura SPA (Single Page Application).  
+
+🔗 Diseño UI en Figma: [Ver diseño en Figma](https://www.figma.com/design/VkCxnTC1OaLEefSAEGOS8r/Restautant-Sushi?node-id=3220-239&m=dev)
 
 ---
 
-## 📂 Estructura del Proyecto Frontend
-<img width="205" alt="image" src="https://github.com/user-attachments/assets/dc817a1a-23a7-4fc4-bc9d-138c8e366e96" />
+## 🗂 Estructura del Proyecto
 
-## 📂 Estructura del Proyecto Backend
-<img width="207" alt="image" src="https://github.com/user-attachments/assets/b951eab4-f073-4484-8a74-96367a676dd3" />
+Este repositorio está organizado como un monorepo, separando claramente el frontend del backend:
 
----
-
-## Diagrama de la Base de Datos (Supabase)
-
-<img width="1118" alt="image" src="https://github.com/user-attachments/assets/f87e9fbb-9f55-4ebd-9476-bca30a3734e9" />
-
-
----
-
-## ¿Qué Hace Este Proyecto?
-
-1. **Backend (Node.js + Supabase)**  
-   - Autenticación con JWT (register/login).  
-   - CRUD de categorías, productos, blogs, reservas, carrito y órdenes.  
-
-2. **Frontend (Vanilla Web Components)**  
-   - Componentes encapsulados con Shadow DOM.  
-   - Enrutador hash-based (`router.js`).  
-   - Diseño responsive con CSS Metodologia BEM
-
----
-
-## Pasos para Levantar el Proyecto
-
-### Backend
-
-1. Clona y entra en la carpeta:
-   
-   git clone <repo-url>
-   cd sushi-app/backend
-
-2. npm install
-
-3. Crea un .env con al menos:
-
-    PORT=3000
-    JWT_SECRET=tu_secreto_aqui
-    SUPABASE_URL=https://xyz.supabase.co
-    SUPABASE_KEY=tu_api_key 
-
-4. Crea las tablas en Supabase (Categories, MenuItems, Users, CartItems, Orders…).
-
-5. npm run dev
-
-### Frontend
-
-1. Desde la raíz del proyecto:
-
-    cd sushi-app/frontend
-
-2. Abre index.html en un navegador moderno.
-
-3. Asegúrate de que API_BASE en api.js apunte a tu backend:
-
-    export const API_BASE = 'http://localhost:3000/api';
+APP-REST-SUSHI/
+├── backend/                # API REST con Node.js y Prisma
+│   ├── controllers/        # Controladores para usuarios, productos y pedidos
+│   ├── middleware/         # Autenticación con JWT
+│   ├── prisma/             # Esquema y cliente de base de datos
+│   ├── routes/             # Rutas organizadas por recurso
+│   ├── .env                # Variables de entorno
+│   ├── db.js               # Inicialización de Prisma
+│   └── server.js           # Servidor Express
+│
+├── frontend/               # SPA con Vanilla JS y Web Components
+│   ├── components/         # Componentes reutilizables
+│   ├── blocks/             # Estilos organizados con BEM
+│   ├── services/           # Lógica del carrito y autenticación
+│   ├── assets/             # Imágenes e íconos
+│   ├── css/                # Hoja de estilos principal
+│   ├── index.html          # Punto de entrada
+│   ├── router.js           # Enrutamiento SPA
+│   └── schema_design/      # Diagrama de la base de datos
+│
+└── .gitignore
 
 ---
 
-### Diseño en Figma
-Todos los mockups están en este archivo de Figma:
+## 🧩 Modelo de Datos (ERD)
 
-Figma: [ https://www.figma.com/file/XXXXXXXXXXXX/Qitchen-Designs](https://www.figma.com/design/Jh09DOT3nHwthxmIjNd6pQ/web-app-exam?node-id=0-1&t=5kfoojXTuLDqCgFQ-1)
+Usuarios (1) ────< Pedidos (n)
+Pedidos (1) ────< DetallesPedido (n)
+Productos (1) ────< DetallesPedido (n)
+Categorias (1) ────< Productos (n)
 
-Layouts de escritorio.
+Entidades:
+- Usuarios: id, nombre, email, contrasena_hash, rol, fecha_registro
+- Pedidos: id, usuario_id, fecha_pedido, estado, total
+- DetallesPedido: pedido_id, producto_id, cantidad, precio_unitario
+- Productos: id, categoria_id, nombre, descripcion_detallada, precio, imagen_url
+- Categorias: id, nombre, descripcion
 
+---
+
+## 🧠 Patrones de Diseño
+
+🔄 **Observer**  
+Permite que componentes reaccionen a cambios (ej. login, carrito).  
+Usado en: `auth-service.js`, `carrito-observer-single.js`
+
+🔒 **Singleton**  
+Gestiona una única instancia de servicios como autenticación o carrito.
+
+🧱 **MVC (backend)**  
+Separación entre modelos, controladores y lógica de negocio.  
+Middleware de autenticación con JWT (`authMiddleware.js`).
+
+---
+
+## 🛠 Tecnologías Utilizadas
+
+- **Backend**: Node.js, Express, PostgreSQL, Prisma, JWT, Bcrypt
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript, Web Components
+- **Herramientas**: Git, npm, Nodemom.
+
+---
+
+## ⚙️ Requisitos Previos
+
+- Node.js v18+
+- npm
+- Git
+
+---
+
+
+
+## 🌐 Endpoints de la API
+
+- POST `/api/usuarios/registro`: Registrar usuario
+- POST `/api/usuarios/login`: Login y JWT
+- GET `/api/productos`: Listar productos por categoría
+- POST `/api/pedidos`: Crear pedido 
 
