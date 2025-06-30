@@ -78,55 +78,16 @@ Middleware de autenticación con JWT (`authMiddleware.js`).
 
 - Node.js v18+
 - npm
-- PostgreSQL
 - Git
 
 ---
 
-## 🚀 Instalación y Ejecución
 
-Clona el repositorio:
-
-    git clone <url-del-repo>
-    cd Proyect_restaurante
-
-Configura el backend:
-
-    cd backend
-    npm install
-
-Crea un archivo `.env`:
-
-    DATABASE_URL="tu_url"
-    JWT_SECRET="tu_secreto"
-
-Genera el cliente Prisma:
-
-    npx prisma generate
-
-Configura el frontend:
-
-    cd ../frontend
-    npm install
-
-Inicia ambos servidores:
-
-**Backend:**
-
-    cd backend
-    npm run dev
-
-**Frontend:**
-
-    cd frontend
-    npm run dev
-
----
 
 ## 🌐 Endpoints de la API
 
 - POST `/api/usuarios/registro`: Registrar usuario
 - POST `/api/usuarios/login`: Login y JWT
 - GET `/api/productos`: Listar productos por categoría
-- POST `/api/pedidos`: Crear pedido (requiere autenticación)
+- POST `/api/pedidos`: Crear pedido 
 
