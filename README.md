@@ -125,8 +125,9 @@ Figma – UI del Proyecto
 **Documento de defensa
 https://docs.google.com/document/d/1ZXYeKWiLN4GmGn6GCSbg0iXaw74pHoB5jokzgdGC-88/edit?usp=sharing
 
+postgresql://postgres:[YOUR-PASSWORD]@db.widyfbkhpyvdoceqwetg.supabase.co:5432/postgres
 DATABASE_URL="https://widyfbkhpyvdoceqwetg.supabase.co"
-JWT_SECRET="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpZHlmYmtocHl2ZG9jZXF3ZXRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEyNzg4NDcsImV4cCI6MjA2Njg1NDg0N30.oBJAVHbem4q9MRIasqsWoCsCxMd-W5CDDrDlwO7AbOA"
+JWT_SECRET="UF6/jPCaZfoQORH3a2dllDEfB5al+z4dSHQoW4KHBmHR3IQUc+WLPDefxm6FTbQbFD5pP6rlOVltO6SFlG0W5A=="
 
 DATABASE_URL="postgresql://postgres:@db.widyfbkhpyvdoceqwetg.supabase.co:5432/postgres"
 JWT_SECRET="tu_clave_secreta_aqui" 
