@@ -128,3 +128,7 @@ https://docs.google.com/document/d/1ZXYeKWiLN4GmGn6GCSbg0iXaw74pHoB5jokzgdGC-88/
 DATABASE_URL="https://widyfbkhpyvdoceqwetg.supabase.co"
 JWT_SECRET="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpZHlmYmtocHl2ZG9jZXF3ZXRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEyNzg4NDcsImV4cCI6MjA2Njg1NDg0N30.oBJAVHbem4q9MRIasqsWoCsCxMd-W5CDDrDlwO7AbOA"
 
+DATABASE_URL="postgresql://postgres:@db.widyfbkhpyvdoceqwetg.supabase.co:5432/postgres"
+JWT_SECRET="tu_clave_secreta_aqui" 
+restaurantesushi*
+
