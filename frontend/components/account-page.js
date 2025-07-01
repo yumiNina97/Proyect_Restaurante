@@ -36,7 +36,7 @@ accountPageTemplate.innerHTML = `
             width: 100%;
         }
         .account-info__edit-btn:hover {
-            background-color:rgb(239, 119, 119);
+            background-color: #864a4a;
             color: white;
         }
         .account-info__input {
@@ -98,7 +98,38 @@ accountPageTemplate.innerHTML = `
                     <button class="account-info__logout-btn" id="logout-button">LOGOUT</button>
                 </div>
 
-                
+                <form class="account-info__form">
+                    <div class="account-info__item">
+                        <span class="account-info__label">Name</span>
+                        <input type="text" class="account-info__input" id="edit-name" required>
+                    </div>
+
+                    
+                    <div class="account-info__item">
+                        <span class="account-info__label">Email</span>
+                        <input type="email" class="account-info__input" id="edit-email" required>
+                    </div>
+
+                   
+
+                    <div class="account-info__item">
+                        <span class="account-info__label">Current Password</span>
+                        <input type="password" class="account-info__input" id="current-password">
+                    </div>
+
+                    <div class="account-info__item">
+                        <span class="account-info__label">New Password</span>
+                        <input type="password" class="account-info__input" id="new-password">
+                    </div>
+                     <div class="account-info__item">
+                    <span class="account-info__label">change password</span>
+                    input type="checkbox" id="change-password-checkbox">
+                    </div>
+                    <div class="account-info__buttons">
+                        <button type="submit" class="account-info__save-btn">Save Changes</button>
+                        <button type="button" class="account-info__cancel-btn">Cancel</button>
+                    </div>
+                </form>
             </div>
         </aside>
     </div>

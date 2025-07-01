@@ -1,0 +1,11 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "nombre": "Prueba1",
+            "email": "Prueba1@gmail.com",
+            "contrasena_hash": "447@k^rK_[:7",
+            "rol": "usuario"
+        }
+    ]
+}
