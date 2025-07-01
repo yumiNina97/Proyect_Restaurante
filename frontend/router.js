@@ -35,7 +35,7 @@ const router = async () => {
         { path: "/register", view: () => document.createElement('registration-page') },
         { path: "/checkout", view: () => document.createElement('checkout-page') },
         
-        // SOLUCIÓN: Movemos las rutas del blog para que las específicas estén primero.
+        
         { path: "/blog/nuevo", view: () => document.createElement('create-post-page') },
         { path: "/blog", view: () => document.createElement('blog-page') },
         { path: "/blog/:id", view: (params) => document.createElement('blog-post-page') },

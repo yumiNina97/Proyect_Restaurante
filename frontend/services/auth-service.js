@@ -91,11 +91,6 @@ class ServicioAuth {
 
         const resultado = await respuesta.json();
         return resultado;
-        } catch (error) {
-            console.error("Token inválido o malformado:", error);
-            this.cerrarSesion();
-            return null;
-        }
     }
 }
 //Singleton
