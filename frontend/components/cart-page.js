@@ -8,7 +8,7 @@ cartPageTemplate.innerHTML = `
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/Menu.png');
+            background-image: url('./assets/images/menu.png');
         }
         .layout-split__sidebar {
             padding: 40px;

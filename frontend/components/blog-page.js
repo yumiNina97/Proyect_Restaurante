@@ -10,7 +10,7 @@ blogPageTemplate.innerHTML = `
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/Main-blog.png');
+            background-image: url('./assets/images/main-blog.png');
         }
         .layout-split__sidebar {
             padding: 60px 40px;
@@ -161,7 +161,7 @@ class BlogPage extends HTMLElement {
         }
         
         const token = servicioAuth.obtenerToken();
-        const respuesta = await fetch(`/api/blog/${id}`, {
+        const respuesta = await fetch(`http://localhost:3000/api/blog/${id}`, {
             method: 'DELETE',
             headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -203,7 +203,7 @@ class BlogPage extends HTMLElement {
         };
         
         const token = servicioAuth.obtenerToken();
-        const respuesta = await fetch(`/api/blog/${id}`, {
+        const respuesta = await fetch(`http://localhost:3000/api/blog/${id}`, {
             method: 'PUT',
             headers: { 
                 'Content-Type': 'application/json',
@@ -233,18 +233,18 @@ class BlogPage extends HTMLElement {
     }
     
     async cargarArticulos() {
-        const respuesta = await fetch('/api/blog');
+        const respuesta = await fetch('http://localhost:3000/api/blog');
         const articulos = await respuesta.json();
         this.renderizarArticulos(articulos);
     }
 
     async cargarMisArticulos() {
-        const articulos = await this.fetchConToken('/api/blog/mis-articulos');
+        const articulos = await this.fetchConToken('http://localhost:3000/api/blog/mis-articulos');
         this.renderizarArticulos(articulos);
     }
     
     async cargarArticulosFavoritos() {
-        const articulos = await this.fetchConToken('/api/blog/favoritos');
+        const articulos = await this.fetchConToken('http://localhost:3000/api/blog/favoritos');
         this.renderizarArticulos(articulos);
     }
 
@@ -254,7 +254,7 @@ class BlogPage extends HTMLElement {
         if (token) {
             headers['Authorization'] = `Bearer ${token}`;
         }
-        await fetch(`/api/blog/${postId}/like`, {
+        await fetch(`http://localhost:3000/api/blog/${postId}/like`, {
             method: 'POST',
             headers: headers,
         });

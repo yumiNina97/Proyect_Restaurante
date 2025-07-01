@@ -8,7 +8,7 @@ createPostPageTemplate.innerHTML = `
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/Main-blog.png');
+            background-image: url('./assets/images/main-blog.png');
         }
         .layout-split__sidebar {
             display: flex;
@@ -78,7 +78,7 @@ class CreatePostPage extends HTMLElement {
 
         const token = servicioAuth.obtenerToken();
 
-        const respuesta = await fetch('/api/blog', {
+        const respuesta = await fetch('http://localhost:3000/api/blog', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

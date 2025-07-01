@@ -15,8 +15,11 @@ menuPageTemplate.innerHTML = `
             display: block;
         }
         #menu-list-container {
-            margin-top: 40px;
-        }
+    margin-top: 40px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px; 
+}
         #product-details-container {
             color: #a0a0a0;
             padding: 40px;
@@ -97,7 +100,7 @@ menuPageTemplate.innerHTML = `
     <div class="layout-split">
         <main class="layout-split__main">
             <div style="position: relative; width: 100%; height: 100%;">
-                <img src="./assets/images/Menu.png" class="main-hero__image" id="main-product-image">
+                <img src="./assets/images/menu.png" class="main-hero__image" id="main-product-image">
                 <site-header></site-header>
                 <h1 class="layout-split__title" id="main-hero-title">MENU</h1>
                 <button class="main-hero__add-btn">+</button>
@@ -113,6 +116,7 @@ menuPageTemplate.innerHTML = `
                 <button class="menu-filters__button" data-category="SPECIAL ROLLS">SPECIAL ROLLS</button>
             </div>
             <div id="menu-list-container"></div>
+            
         </aside>
     </div>
 `;
@@ -134,13 +138,17 @@ class MenuPage extends HTMLElement {
 
         this.todasLasCategorias = [];
         this.menuCompleto = [];
+
+        this.categoriasVisibles = 0;
+        this.cantidadPorCarga = 2;
+        this.observador = null;
     }
 
     connectedCallback() {
         this.cargarDatosDelMenu();
         this.inicializarEventListeners();
     }
-    
+
     inicializarEventListeners() {
         this.contenedorMenu.addEventListener('click', (evento) => {
             const itemMenu = evento.target.closest('.menu-item');
@@ -149,7 +157,6 @@ class MenuPage extends HTMLElement {
             if (evento.target.closest('.menu-item__add-btn')) {
                 const producto = this.menuCompleto.find(p => p.nombre === itemMenu.dataset.title);
                 if (producto) {
-                    
                     servicioCarrito.agregarProducto(producto);
                 }
             } else {
@@ -168,7 +175,7 @@ class MenuPage extends HTMLElement {
     }
 
     async cargarDatosDelMenu() {
-        const respuesta = await fetch('/api/productos');
+        const respuesta = await fetch('http://localhost:3000/api/productos');
         const datosMenu = await respuesta.json();
         this.todasLasCategorias = datosMenu;
         this.menuCompleto = this.todasLasCategorias.flatMap(cat => cat.items);
@@ -176,13 +183,28 @@ class MenuPage extends HTMLElement {
     }
 
     renderizarMenu(filtroDeCategoria) {
-        this.contenedorMenu.innerHTML = ''; 
+        this.contenedorMenu.innerHTML = '';
+        this.categoriasVisibles = 0;
+        this.categoriaFiltroActual = filtroDeCategoria;
+        this.cargarMasCategorias();
 
-        const categoriasARenderizar = filtroDeCategoria === 'ALL'
+        const sentinel = document.createElement('div');
+        sentinel.id = 'sentinel-scroll';
+        sentinel.style.height = '1px';
+        this.contenedorMenu.appendChild(sentinel);
+    }
+
+    cargarMasCategorias() {
+        const categoriasFiltradas = this.categoriaFiltroActual === 'ALL'
             ? this.todasLasCategorias
-            : this.todasLasCategorias.filter(cat => cat.nombre === filtroDeCategoria);
+            : this.todasLasCategorias.filter(cat => cat.nombre === this.categoriaFiltroActual);
 
-        categoriasARenderizar.forEach(categoria => {
+        const categoriasParaMostrar = categoriasFiltradas.slice(
+            this.categoriasVisibles,
+            this.categoriasVisibles + this.cantidadPorCarga
+        );
+
+        categoriasParaMostrar.forEach(categoria => {
             const elementoCategoria = document.createElement('div');
             elementoCategoria.className = 'menu-category';
             elementoCategoria.innerHTML = `<h2 class="menu-category__title">${categoria.nombre}</h2>`;
@@ -192,8 +214,43 @@ class MenuPage extends HTMLElement {
                 envolturaItem.innerHTML = this.crearHtmlParaItemDeMenu(item);
                 elementoCategoria.appendChild(envolturaItem.firstElementChild);
             });
+
             this.contenedorMenu.appendChild(elementoCategoria);
         });
+
+        this.categoriasVisibles += this.cantidadPorCarga;
+
+        const sentinelExistente = this.shadowRoot.querySelector('#sentinel-scroll');
+        if (sentinelExistente) sentinelExistente.remove();
+
+        const nuevoSentinel = document.createElement('div');
+        nuevoSentinel.id = 'sentinel-scroll';
+        nuevoSentinel.style.height = '1px';
+        this.contenedorMenu.appendChild(nuevoSentinel);
+
+        if (this.categoriasVisibles < categoriasFiltradas.length) {
+            this.configurarObserver();
+        }
+    }
+
+    configurarObserver() {
+        if (this.observador) this.observador.disconnect();
+
+        const sentinel = this.shadowRoot.querySelector('#sentinel-scroll');
+        if (!sentinel) return;
+
+        this.observador = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                this.observador.disconnect();
+                this.cargarMasCategorias();
+            }
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1.0
+        });
+
+        this.observador.observe(sentinel);
     }
 
     actualizarBotonFiltroActivo(botonClickeado) {
@@ -211,15 +268,15 @@ class MenuPage extends HTMLElement {
 
         this.imagenPrincipal.src = nuevaImagen;
         this.imagenPrincipal.alt = nuevoTitulo;
-        
+
         let htmlIconoTitulo = nuevoIcono ? `<img src="${nuevoIcono}" alt="Icono">` : '';
         this.tituloPrincipal.innerHTML = `${nuevoTitulo} ${htmlIconoTitulo}`;
-        
-        let textoDescripcion = nuevaDescripcion 
+
+        let textoDescripcion = nuevaDescripcion
             ? `<p>${nuevaDescripcion}</p>`
             : '<p>Descubre el sabor único de nuestro platillo.</p>';
         this.contenedorDetalles.innerHTML = textoDescripcion;
-        
+
         this.botonAnadirPrincipal.classList.add('main-hero__add-btn--visible');
     }
 

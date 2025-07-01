@@ -44,7 +44,7 @@ class BlogPostPage extends HTMLElement {
     }
 
     async cargarArticulo(id) {
-        const respuesta = await fetch(`/api/blog/${id}`);
+        const respuesta = await fetch(`http://localhost:3000/api/blog/${id}`);
         if (!respuesta.ok) {
             this.articleContainer.innerHTML = '<h1>Artículo no encontrado</h1>';
             return;

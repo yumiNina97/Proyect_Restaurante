@@ -9,7 +9,7 @@ checkoutPageTemplate.innerHTML = `
 
     <style>
         .layout-split__main {
-            background-image: url('./assets/images/Main-reservation.png');
+            background-image: url('./assets/images/main-reservation.png');
         }
         .layout-split__sidebar {
             display: flex;
@@ -116,7 +116,7 @@ class CheckoutPage extends HTMLElement {
             return;
         }
 
-        const respuesta = await fetch('/api/pedidos', {
+        const respuesta = await fetch('http://localhost:3000/api/pedidos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -4,7 +4,7 @@ registrationPageTemplate.innerHTML = `
     <link rel="stylesheet" href="blocks/site-header/site-header.css">
     <link rel="stylesheet" href="blocks/registration-form/registration-form.css">
     <style>
-        .layout-split__main { background-image: url('./assets/images/Main-reservation.png'); }
+        .layout-split__main { background-image: url('./assets/images/main-reservation.png'); }
         .layout-split__sidebar { display: flex; justify-content: center; align-items: center; padding: 40px; }
     </style>
     <div class="layout-split">
@@ -53,7 +53,7 @@ class RegistrationPage extends HTMLElement {
             return;
         }
 
-        const respuesta = await fetch('/api/usuarios/registro', {
+        const respuesta = await fetch('http://localhost:3000/api/usuarios/registro', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

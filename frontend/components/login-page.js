@@ -4,7 +4,7 @@ loginPageTemplate.innerHTML = `
     <link rel="stylesheet" href="blocks/site-header/site-header.css">
     <link rel="stylesheet" href="blocks/login-form/login-form.css">
     <style>
-        .layout-split__main { background-image: url('./assets/images/Main-reservation.png'); }
+        .layout-split__main { background-image: url('./assets/images/main-reservation.png'); }
         .layout-split__sidebar { 
         display: flex; 
         justify-content: center; 
@@ -48,7 +48,7 @@ class LoginPage extends HTMLElement {
         const formData = new FormData(this.formularioLogin);
         const datos = Object.fromEntries(formData.entries());
 
-        const respuesta = await fetch('/api/usuarios/login', {
+        const respuesta = await fetch('http://localhost:3000/api/usuarios/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(datos)
