@@ -132,13 +132,13 @@ class AccountPage extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(accountPageTemplate.content.cloneNode(true));
 
-        // Elementos de visualización
+        
         this.nombreElemento = this.shadowRoot.querySelector('#account-name');
         this.emailElemento = this.shadowRoot.querySelector('#account-email');
         this.rolElemento = this.shadowRoot.querySelector('#account-role');
         this.botonLogout = this.shadowRoot.querySelector('#logout-button');
         
-        // Elementos de edición
+        
         this.formularioEdicion = this.shadowRoot.querySelector('.account-info__form');
         this.displayInfo = this.shadowRoot.querySelector('.account-info__display');
         this.botonEditar = this.shadowRoot.querySelector('#edit-button');
@@ -169,7 +169,7 @@ class AccountPage extends HTMLElement {
         this.emailElemento.textContent = usuario.email;
         this.rolElemento.textContent = usuario.rol;
 
-        // Prellenar el formulario de edición
+        
         this.inputNombre.value = usuario.nombre;
         this.inputEmail.value = usuario.email;
     }
@@ -183,7 +183,7 @@ class AccountPage extends HTMLElement {
         this.formularioEdicion.classList.remove('active');
         this.displayInfo.classList.remove('hidden');
         this.formularioEdicion.reset();
-        this.mostrarDatosUsuario(); // Restaurar los valores originales
+        this.mostrarDatosUsuario(); 
     }
 
     async manejarActualizacion(evento) {
