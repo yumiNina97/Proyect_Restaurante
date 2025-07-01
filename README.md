@@ -121,3 +121,6 @@ POST	/api/pedidos	Crea un nuevo pedido (requiere autenticación)
 
 🖌️ Diseño en Figma
 Figma – UI del Proyecto
+
+**Documento de defensa
+https://docs.google.com/document/d/1ZXYeKWiLN4GmGn6GCSbg0iXaw74pHoB5jokzgdGC-88/edit?usp=sharing
