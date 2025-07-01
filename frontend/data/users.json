@@ -6,6 +6,29 @@
             "email": "Prueba1@gmail.com",
             "contrasena_hash": "447@k^rK_[:7",
             "rol": "usuario"
+        
+        },
+        {
+            "id": 2,
+            "nombre": "pepe",
+            "email": "pepe@gmail.com",
+            "contrasena_hash": "*/*12346/*",
+            "rol": "usuario"
+        }
+        ,
+        {
+            "id": 2,
+            "nombre": "pepe",
+            "email": "pepe@gmail.com",
+            "contrasena_hash": "*/*12346/*",
+            "rol": "usuario"
+        },
+         {
+            "id": 3,
+            "nombre": "carlos",
+            "email": "carlos@gmail.com",
+            "contrasena_hash": "*/*+++carlos/*",
+            "rol": "usuario"
         }
     ]
 }

@@ -17,19 +17,36 @@ class ServicioAuth {
     }
 
     async iniciarSesion(email, password) {
-        const respuesta = await fetch('http://localhost:3000/api/usuarios/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
-        });
-        const resultado = await respuesta.json();
-        if (respuesta.ok) {
-            this.token = resultado.token;
-            localStorage.setItem('token', this.token);
-            this.notificar();
-            return { exito: true };
-        } else {
-            return { exito: false, mensaje: resultado.mensaje };
+        try {
+            const response = await fetch('/frontend/data/users.json');
+            const data = await response.json();
+            const usuario = data.users.find(u => u.email === email);
+            
+            if (!usuario) {
+                return { exito: false, mensaje: 'Usuario no encontrado' };
+            }
+
+            // En un entorno real, aquí se verificaría la contraseña con bcrypt
+            // Por ahora, simulamos una autenticación simple
+            if (password === 'demo123') {
+                const token = btoa(JSON.stringify({
+                    id: usuario.id,
+                    nombre: usuario.nombre,
+                    email: usuario.email,
+                    rol: usuario.rol,
+                    exp: Date.now() + 3600000 // 1 hora de expiración
+                }));
+                
+                this.token = token;
+                localStorage.setItem('token', token);
+                this.notificar();
+                return { exito: true };
+            } else {
+                return { exito: false, mensaje: 'Contraseña incorrecta' };
+            }
+        } catch (error) {
+            console.error('Error al leer el archivo JSON:', error);
+            return { exito: false, mensaje: 'Error al iniciar sesión' };
         }
     }
 
@@ -75,23 +92,39 @@ class ServicioAuth {
             throw new Error('No hay sesión activa');
         }
 
-        const respuesta = await fetch(`http://localhost:3000/api/usuarios/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(datos)
-        });
+        try {
+            const response = await fetch('/frontend/data/users.json');
+            const data = await response.json();
+            const usuario = data.users.find(u => u.id === id);
+            
+            if (!usuario) {
+                throw new Error('Usuario no encontrado');
+            }
 
-    
-        if (!respuesta.ok) {
-            const error = await respuesta.json();
-            throw new Error(error.mensaje);
+            
+            Object.assign(usuario, {
+                nombre: datos.nombre || usuario.nombre,
+                email: datos.email || usuario.email
+            });
+
+            
+            const nuevoToken = btoa(JSON.stringify({
+                id: usuario.id,
+                nombre: usuario.nombre,
+                email: usuario.email,
+                rol: usuario.rol,
+                exp: Date.now() + 3600000 
+            }));
+            
+            this.token = nuevoToken;
+            localStorage.setItem('token', nuevoToken);
+            this.notificar();
+            
+            return usuario;
+        } catch (error) {
+            console.error('Error al actualizar usuario:', error);
+            throw new Error('Error al actualizar usuario');
         }
-
-        const resultado = await respuesta.json();
-        return resultado;
     }
 }
 //Singleton
