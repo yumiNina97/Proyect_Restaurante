@@ -133,3 +133,4 @@ DATABASE_URL="postgresql://postgres:@db.widyfbkhpyvdoceqwetg.supabase.co:5432/po
 JWT_SECRET="tu_clave_secreta_aqui" 
 restaurantesushi*
 
+

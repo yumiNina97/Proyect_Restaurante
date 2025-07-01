@@ -64,6 +64,34 @@ class ServicioAuth {
 
             return payload;
         } catch (error) {
+            console.error('Error al decodificar el token:', error);
+            return null;
+        }
+    }
+
+    async actualizarUsuario(id, datos) {
+        const token = this.obtenerToken();
+        if (!token) {
+            throw new Error('No hay sesión activa');
+        }
+
+        const respuesta = await fetch(`http://localhost:3000/api/usuarios/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(datos)
+        });
+
+        if (!respuesta.ok) {
+            const error = await respuesta.json();
+            throw new Error(error.mensaje);
+        }
+
+        const resultado = await respuesta.json();
+        return resultado;
+        } catch (error) {
             console.error("Token inválido o malformado:", error);
             this.cerrarSesion();
             return null;
