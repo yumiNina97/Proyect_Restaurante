@@ -98,28 +98,7 @@ accountPageTemplate.innerHTML = `
                     <button class="account-info__logout-btn" id="logout-button">LOGOUT</button>
                 </div>
 
-                <form class="account-info__form">
-                    <div class="account-info__item">
-                        <span class="account-info__label">Name</span>
-                        <input type="text" class="account-info__input" id="edit-name" required>
-                    </div>
-                    <div class="account-info__item">
-                        <span class="account-info__label">Email</span>
-                        <input type="email" class="account-info__input" id="edit-email" required>
-                    </div>
-                    <div class="account-info__item">
-                        <span class="account-info__label">Current Password</span>
-                        <input type="password" class="account-info__input" id="current-password">
-                    </div>
-                    <div class="account-info__item">
-                        <span class="account-info__label">New Password</span>
-                        <input type="password" class="account-info__input" id="new-password">
-                    </div>
-                    <div class="account-info__buttons">
-                        <button type="submit" class="account-info__save-btn">Save Changes</button>
-                        <button type="button" class="account-info__cancel-btn">Cancel</button>
-                    </div>
-                </form>
+                
             </div>
         </aside>
     </div>
