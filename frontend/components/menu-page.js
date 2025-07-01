@@ -1,11 +1,11 @@
 import { servicioCarrito } from '../services/carrito-observer-single.js';
 const menuPageTemplate = document.createElement('template');
 menuPageTemplate.innerHTML = `
-    <link rel="stylesheet" href="blocks/layout-split-menu/layout-split-menu.css">
-    <link rel="stylesheet" href="blocks/site-header/site-header.css">
-    <link rel="stylesheet" href="blocks/menu-filter/menu-filter.css">
-    <link rel="stylesheet" href="blocks/menu-category/menu-category.css">
-    <link rel="stylesheet" href="blocks/menu-item/menu-item.css">
+    <link rel="stylesheet" href="../blocks/layout-split-menu/layout-split-menu.css">
+    <link rel="stylesheet" href="../blocks/site-header/site-header.css">
+    <link rel="stylesheet" href="../blocks/menu-filter/menu-filter.css">
+    <link rel="stylesheet" href="../blocks/menu-category/menu-category.css">
+    <link rel="stylesheet" href="../blocks/menu-item/menu-item.css">
     
    <style>
         .main-hero__image {
@@ -100,7 +100,7 @@ menuPageTemplate.innerHTML = `
     <div class="layout-split">
         <main class="layout-split__main">
             <div style="position: relative; width: 100%; height: 100%;">
-                <img src="./assets/images/menu.png" class="main-hero__image" id="main-product-image">
+                <img src="../assets/images/menu.png" class="main-hero__image" id="main-product-image">
                 <site-header></site-header>
                 <h1 class="layout-split__title" id="main-hero-title">MENU</h1>
                 <button class="main-hero__add-btn">+</button>
