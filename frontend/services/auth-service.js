@@ -84,7 +84,14 @@ class ServicioAuth {
             body: JSON.stringify(datos)
         });
 
-        
+    
+        if (!respuesta.ok) {
+            const error = await respuesta.json();
+            throw new Error(error.mensaje);
+        }
+
+        const resultado = await respuesta.json();
+        return resultado;
     }
 }
 //Singleton
