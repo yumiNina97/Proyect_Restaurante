@@ -36,7 +36,7 @@ accountPageTemplate.innerHTML = `
             width: 100%;
         }
         .account-info__edit-btn:hover {
-            background-color: #864a4a;
+            background-color:rgb(239, 119, 119);
             color: white;
         }
         .account-info__input {
