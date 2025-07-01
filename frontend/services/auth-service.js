@@ -26,15 +26,14 @@ class ServicioAuth {
                 return { exito: false, mensaje: 'Usuario no encontrado' };
             }
 
-            // En un entorno real, aquí se verificaría la contraseña con bcrypt
-            // Por ahora, simulamos una autenticación simple
-            if (password === 'demo123') {
+            
+            if (password === '447@k^rK_[:7') {
                 const token = btoa(JSON.stringify({
                     id: usuario.id,
                     nombre: usuario.nombre,
                     email: usuario.email,
                     rol: usuario.rol,
-                    exp: Date.now() + 3600000 // 1 hora de expiración
+                    exp: Date.now() + 3600000 
                 }));
                 
                 this.token = token;

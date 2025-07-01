@@ -1,3 +1,5 @@
+import { servicioAuth } from '../services/auth-service.js';
+
 const loginPageTemplate = document.createElement('template');
 loginPageTemplate.innerHTML = `
     <link rel="stylesheet" href="blocks/layout-split/layout-split.css">
@@ -48,20 +50,15 @@ class LoginPage extends HTMLElement {
         const formData = new FormData(this.formularioLogin);
         const datos = Object.fromEntries(formData.entries());
 
-        const respuesta = await fetch('http://localhost:3000/api/usuarios/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(datos)
-        });
-
-        const resultado = await respuesta.json();
-
-        if (respuesta.ok) {
-            alert(resultado.mensaje);
-            localStorage.setItem('token', resultado.token);
-            window.location.hash = '#/';
-        } else {
-            alert(`Error: ${resultado.mensaje}`);
+        try {
+            const resultado = await servicioAuth.iniciarSesion(datos.email, datos.password);
+            if (resultado.exito) {
+                window.location.hash = '#/account';
+            } else {
+                alert(`Error: ${resultado.mensaje}`);
+            }
+        } catch (error) {
+            alert('Error al iniciar sesión: ' + error.message);
         }
     }
 }
