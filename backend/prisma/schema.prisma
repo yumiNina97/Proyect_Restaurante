@@ -64,6 +64,17 @@ model productos {
   @@index([categoria_id], map: "idx_productos_categoria_id")
 }
 
+model Blog {
+  id                Int      @id @default(autoincrement())
+  titulo            String
+  resumen           String
+  contenido_completo String
+  imagen_url        String
+  autor             String
+  fecha_publicacion DateTime
+}
+
+
 model publicacionesblog {
   id                  Int         @id @default(autoincrement())
   autor_id            Int
@@ -93,6 +104,7 @@ model reservas {
 
   @@index([fecha], map: "idx_reservas_fecha")
 }
+
 
 model usuarios {
   id                Int                 @id @default(autoincrement())

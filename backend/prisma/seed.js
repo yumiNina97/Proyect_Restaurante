@@ -7,17 +7,34 @@ const prisma = new PrismaClient();
 async function main() {
     console.log('Seed init');
 
-   
+    // Limpiar datos existentes
     await prisma.likesblog.deleteMany();
     await prisma.publicacionesblog.deleteMany();
     await prisma.productos.deleteMany();
     await prisma.categorias.deleteMany();
+    await prisma.usuarios.deleteMany();
+
+    // Crear usuario de prueba
+    const bcrypt = require('bcryptjs');
+    const salt = await bcrypt.genSalt(10);
+    const contrasenaHash = await bcrypt.hash('123456', salt);
+
+    const usuarioPrueba = await prisma.usuarios.create({
+        data: {
+            nombre: 'Usuario Prueba',
+            email: 'test@example.com',
+            contrasena_hash: contrasenaHash,
+            rol: 'usuario'
+        }
+    });
+
+    console.log('✔ Usuario de prueba creado:', usuarioPrueba.email);
 
     
     const categorias = [
-        { nombre: 'Entradas', descripcion: 'Platos para comenzar' },
-        { nombre: 'Platos Principales', descripcion: 'Platos principales de la casa' },
-        { nombre: 'Postres', descripcion: 'Dulces y postres' }
+        { nombre: 'MAKI', descripcion: 'Rollos tradicionales de sushi' },
+        { nombre: 'URAMAKI', descripcion: 'Rollos invertidos de sushi' },
+        { nombre: 'SPECIAL ROLLS', descripcion: 'Rollos especiales de la casa' }
     ];
 
     for (const categoria of categorias) {
@@ -31,32 +48,31 @@ async function main() {
     }
 
     
-    const entradas = await prisma.categorias.findUnique({ where: { nombre: 'Entradas' } });
-    const principales = await prisma.categorias.findUnique({ where: { nombre: 'Platos Principales' } });
-    const postres = await prisma.categorias.findUnique({ where: { nombre: 'Postres' } });
+    const makiCat = await prisma.categorias.findUnique({ where: { nombre: 'MAKI' } });
+    const uramakiCat = await prisma.categorias.findUnique({ where: { nombre: 'URAMAKI' } });
+    const specialCat = await prisma.categorias.findUnique({ where: { nombre: 'SPECIAL ROLLS' } });
 
-   
     const productos = [
         {
-            nombre: 'Ensalada César',
-            descripcion_detallada: 'Lechuga romana fresca con aderezo César, crutones y queso parmesano',
-            precio: 12.99,
-            imagen_url: '../assets/images/menu.png',
-            categoria_id: entradas.id
+            nombre: 'SPICY TUNA MAKI',
+            descripcion_detallada: 'A tantalizing blend of spicy tuna, cucumber, and avocado, harmoniously rolled in nori and seasoned rice.',
+            precio: 9.00,
+            imagen_url: 'assets/images/menu/menu-spicy-tuna.png',
+            categoria_id: makiCat.id
         },
         {
-            nombre: 'Filete Mignon',
-            descripcion_detallada: 'Filete de res premium con salsa de vino tinto',
-            precio: 29.99,
-            imagen_url: '../assets/images/menu.png',
-            categoria_id: principales.id
+            nombre: 'VOLCANO DELIGHT',
+            descripcion_detallada: 'Creamy crab salad, avocado, and cucumber rolled inside, topped with spicy tuna and drizzled with fiery sriracha sauce.',
+            precio: 12.00,
+            imagen_url: 'assets/images/menu/menu-volcano-delight.png',
+            categoria_id: uramakiCat.id
         },
         {
-            nombre: 'Tiramisú',
-            descripcion_detallada: 'Postre italiano clásico con café y mascarpone',
-            precio: 8.99,
-            imagen_url: '../assets/images/menu.png',
-            categoria_id: postres.id
+            nombre: 'SUNRISE BLISS',
+            descripcion_detallada: 'A delicate combination of fresh salmon, cream cheese, and asparagus, rolled in orange-hued tobiko for a burst of sunrise-inspired flavors.',
+            precio: 16.00,
+            imagen_url: 'assets/images/menu/menu-sunrise-bliss.png',
+            categoria_id: specialCat.id
         }
     ];
 

@@ -4,7 +4,7 @@
             "id": 1,
             "nombre": "Prueba1",
             "email": "Prueba1@gmail.com",
-            "contrasena_hash": "447@k^rK_[:7",
+            "contrasena_hash": "*prueba2025*",
             "rol": "usuario"
         
         },
@@ -18,8 +18,8 @@
         ,
         {
             "id": 2,
-            "nombre": "pepe",
-            "email": "pepe@gmail.com",
+            "nombre": "juan",
+            "email": "juan@gmail.com",
             "contrasena_hash": "*/*12346/*",
             "rol": "usuario"
         },

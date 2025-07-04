@@ -63,6 +63,19 @@ CREATE TABLE "productos" (
 );
 
 -- CreateTable
+CREATE TABLE "Blog" (
+    "id" SERIAL NOT NULL,
+    "titulo" TEXT NOT NULL,
+    "resumen" TEXT NOT NULL,
+    "contenido_completo" TEXT NOT NULL,
+    "imagen_url" TEXT NOT NULL,
+    "autor" TEXT NOT NULL,
+    "fecha_publicacion" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Blog_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "publicacionesblog" (
     "id" SERIAL NOT NULL,
     "autor_id" INTEGER NOT NULL,

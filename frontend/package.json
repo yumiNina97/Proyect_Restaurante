@@ -12,5 +12,10 @@
   "description": "",
   "devDependencies": {
     "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0"
   }
 }

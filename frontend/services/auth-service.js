@@ -18,34 +18,34 @@ class ServicioAuth {
 
     async iniciarSesion(email, password) {
         try {
-            const response = await fetch('/frontend/data/users.json');
+            const response = await fetch('http://localhost:3000/api/login', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify({ email, password })
+            });
+
             const data = await response.json();
-            const usuario = data.users.find(u => u.email === email);
+            console.log('Respuesta del servidor:', data);
             
-            if (!usuario) {
-                return { exito: false, mensaje: 'Usuario no encontrado' };
+            if (!response.ok) {
+                return { exito: false, mensaje: data.error || 'Error al iniciar sesión' };
             }
 
-            
-            if (password === '447@k^rK_[:7') {
-                const token = btoa(JSON.stringify({
-                    id: usuario.id,
-                    nombre: usuario.nombre,
-                    email: usuario.email,
-                    rol: usuario.rol,
-                    exp: Date.now() + 3600000 
-                }));
-                
-                this.token = token;
-                localStorage.setItem('token', token);
+            if (data.token) {
+                this.token = data.token;
+                localStorage.setItem('token', data.token);
                 this.notificar();
                 return { exito: true };
             } else {
-                return { exito: false, mensaje: 'Contraseña incorrecta' };
+                return { exito: false, mensaje: 'No se recibió el token de autenticación' };
             }
         } catch (error) {
-            console.error('Error al leer el archivo JSON:', error);
-            return { exito: false, mensaje: 'Error al iniciar sesión' };
+            console.error('Error al iniciar sesión:', error);
+            return { exito: false, mensaje: 'Error de conexión con el servidor' };
         }
     }
 
@@ -92,37 +92,39 @@ class ServicioAuth {
         }
 
         try {
-            const response = await fetch('/frontend/data/users.json');
-            const data = await response.json();
-            const usuario = data.users.find(u => u.id === id);
-            
-            if (!usuario) {
-                throw new Error('Usuario no encontrado');
-            }
-
-            
-            Object.assign(usuario, {
-                nombre: datos.nombre || usuario.nombre,
-                email: datos.email || usuario.email
+            const response = await fetch(`http://localhost:3000/api/usuarios/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                credentials: 'include',
+                body: JSON.stringify(datos)
             });
 
+            if (!response.ok) {
+                const error = await response.json();
+                throw new Error(error.mensaje || 'Error al actualizar usuario');
+            }
+
+            const usuarioActualizado = await response.json();
             
             const nuevoToken = btoa(JSON.stringify({
-                id: usuario.id,
-                nombre: usuario.nombre,
-                email: usuario.email,
-                rol: usuario.rol,
-                exp: Date.now() + 3600000 
+                id: usuarioActualizado.id,
+                nombre: usuarioActualizado.nombre,
+                email: usuarioActualizado.email,
+                rol: usuarioActualizado.rol,
+                exp: Date.now() + 3600000 // 1 hora
             }));
             
             this.token = nuevoToken;
             localStorage.setItem('token', nuevoToken);
             this.notificar();
             
-            return usuario;
+            return usuarioActualizado;
         } catch (error) {
             console.error('Error al actualizar usuario:', error);
-            throw new Error('Error al actualizar usuario');
+            throw new Error(error.message || 'Error al actualizar usuario');
         }
     }
 }
