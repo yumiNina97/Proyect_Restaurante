@@ -47,7 +47,7 @@ JWT_SECRET="tu_clave_secreta_aqui"
 ```
 
 📷 **Esquema visual**:  
-![Base de datos](./frontend/schema_design/supabase-schema-widyfbkhpyvdoceqwetg.png)
+![Base de datos](./supabase-schema-widyfbkhpyvdoceqwetg.png)
 
 ---
 
